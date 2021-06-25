@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
@@ -10,7 +10,48 @@
 </head>
 
 <body>
-
+	<header>
+		<div class="heder-footer-text">
+			<span>Калькулятор начинающего разработчика</span>
+		</div>
+	</header>
+	<main>
+		<div class="working-window">
+			<div class="operand-one">
+				<input class="input" type="text">
+				<input class="input" type="text">
+				<input class="input" type="text">
+				<input class="input" type="text">
+			</div>
+			<div class="operators">
+				<span>+</span>
+				<span>-</span>
+				<span>*</span>
+				<span>/</span>
+			</div>
+			<div class="operand-two">
+				<input class="input" type="text">
+				<input class="input" type="text">
+				<input class="input" type="text">
+				<input class="input" type="text">
+			</div>
+			<div class="equally">
+				<span>=</span>
+			</div>
+			<div class="result">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<input class="button" type="button" value="Нажми на кнопку - получишь результат" onclick="addition();">
+	</main>
+	<footer>
+		<div class="heder-footer-text">
+			<span>Спасибо за внимание!</span>
+		</div>
+	</footer>
 
 	<script src="JavaScript/Calcylator.js"></script>
 </body>
