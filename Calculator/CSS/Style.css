@@ -49,7 +49,7 @@ main {
 .equally {
 	display: flex;
    flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	width: 50px;
    text-align: center;
 }
@@ -65,14 +65,15 @@ main {
 	background-color: floralwhite;
 }
 
-.button {
+.button-and-reset{
 	border-color: #7c7b83;
 	border-radius: 5px;
 	color: #0b2933;
 }
 
-.button:hover {
+.button-and-reset:hover {
 	border-color: #6b6879;
 	background-color: honeydew;
 	cursor: pointer;
 }
+
