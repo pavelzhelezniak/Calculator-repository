@@ -9,20 +9,8 @@ const inputOperandDivisionTwo = document.getElementById('input8');
 const button = document.getElementById('button');
 
 
-function operators1(inputSumResult) {
-	document.getElementById('sum').innerHTML = inputSumResult;
-}
-
-function operators2(inputSubtractionResult) {
-	document.getElementById('subtraction').innerHTML = inputSubtractionResult;
-}
-
-function operators3(inputMultiplicationResult) {
-	document.getElementById('multiplication').innerHTML = inputMultiplicationResult;
-}
-
-function operators4(inputDivisionResult) {
-	document.getElementById('division').innerHTML = inputDivisionResult;
+function operators(inputResult, elementId) {
+	document.getElementById(elementId).innerHTML = inputResult;
 }
 
 button.addEventListener('click', function () {
@@ -42,29 +30,30 @@ button.addEventListener('click', function () {
 	const inputOperandDivisionTwoValue = inputOperandDivisionTwo.value;
 	const inputDivision = parseFloat(inputOperandDivisionOneValue, 10) / parseFloat(inputOperandDivisionTwoValue, 10);
 
-	operators1(inputSum);
-	operators2(inputSubtraction);
-	operators3(inputMultiplication);
-	operators4(inputDivision);
+	operators(inputSum, 'sum');
+	operators(inputSubtraction, 'subtraction');
+	operators(inputMultiplication, 'multiplication');
+	operators(inputDivision, 'division');
 });
 
-function resets() {
-	document.getElementById('input1').value = "";
-	document.getElementById('input2').value = "";
-	document.getElementById('input3').value = "";
-	document.getElementById('input4').value = "";
-	document.getElementById('input5').value = "";
-	document.getElementById('input6').value = "";
-	document.getElementById('input7').value = "";
-	document.getElementById('input8').value = "";
-	document.getElementById('sum').innerHTML = "";
-	document.getElementById('subtraction').innerHTML = "";
-	document.getElementById('multiplication').innerHTML = "";
-	document.getElementById('division').innerHTML = "";
+function resets(divResult, divId) {
+	document.getElementById(divId).value = divResult;
+	document.getElementById(divId).innerHTML = divResult;
 }
 
 reset.addEventListener('click', function () {
-	resets();
+	resets('', 'input1');
+	resets('', 'input2');
+	resets('', 'input3');
+	resets('', 'input4');
+	resets('', 'input5');
+	resets('', 'input6');
+	resets('', 'input7');
+	resets('', 'input8');
+	resets('', 'sum');
+	resets('', 'multiplication');
+	resets('', 'subtraction');
+	resets('', 'division');
 });
 
 
