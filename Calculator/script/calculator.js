@@ -35,21 +35,14 @@ function calculate(inputOperandOne, inputOperandTwo, operation) {
 
 
 button.addEventListener('click', function () {
-	const inputOperandSumOneValue = inputOperandSumOne.value;
-	const inputOperandSumTwoValue = inputOperandSumTwo.value;
-	const inputSum = sum(inputOperandSumTwoValue, inputOperandSumOneValue);
 
-	const inputOperandSubtractionOneValue = inputOperandSubtractionOne.value;
-	const inputOperandSubtractionTwoValue = inputOperandSubtractionTwo.value;
-	const inputSubtraction = subtraction(inputOperandSubtractionOneValue, inputOperandSubtractionTwoValue)
+	const inputSum = calculate(inputOperandSumOne, inputOperandSumTwo, sum);
 
-	const inputOperandMultiplicationOneValue = inputOperandMultiplicationOne.value;
-	const inputOperandMultiplicationTwoValue = inputOperandMultiplicationTwo.value;
-	const inputMultiplication = multiplication(inputOperandMultiplicationOneValue, inputOperandMultiplicationTwoValue)
+	const inputSubtraction = calculate(inputOperandSubtractionOne, inputOperandSubtractionTwo, subtraction);
 
-	const inputOperandDivisionOneValue = inputOperandDivisionOne.value;
-	const inputOperandDivisionTwoValue = inputOperandDivisionTwo.value;
-	const inputDivision = division(inputOperandDivisionOneValue, inputOperandDivisionTwoValue)
+	const inputMultiplication = calculate(inputOperandMultiplicationOne, inputOperandMultiplicationTwo, multiplication)
+
+	const inputDivision = calculate(inputOperandDivisionOne, inputOperandDivisionTwo, division)
 
 	operators(inputSum, 'sum');
 	operators(inputSubtraction, 'subtraction');
