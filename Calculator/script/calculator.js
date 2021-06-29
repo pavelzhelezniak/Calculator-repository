@@ -13,22 +13,43 @@ function operators(inputResult, elementId) {
 	document.getElementById(elementId).innerHTML = inputResult;
 }
 
+function sum(inputOperandSumOneValue, inputOperandSumTwoValue) {
+	return parseFloat(inputOperandSumOneValue, 10) + parseFloat(inputOperandSumTwoValue, 10);
+}
+
+function subtraction(inputOperandSubtractionOneValue, inputOperandSubtractionTwoValue) {
+	return parseFloat(inputOperandSubtractionOneValue, 10) - parseFloat(inputOperandSubtractionTwoValue, 10);
+}
+
+function multiplication(inputOperandMultiplicationOneValue, inputOperandMultiplicationTwoValue) {
+	return parseFloat(inputOperandMultiplicationOneValue, 10) * parseFloat(inputOperandMultiplicationTwoValue, 10);
+}
+
+function division(inputOperandDivisionOneValue, inputOperandDivisionTwoValue) {
+	return parseFloat(inputOperandDivisionOneValue, 10) / parseFloat(inputOperandDivisionTwoValue, 10);
+}
+
+function calculate(inputOperandOne, inputOperandTwo, operation) {
+	return operation(inputOperandOne.value, inputOperandTwo.value);
+}
+
+
 button.addEventListener('click', function () {
 	const inputOperandSumOneValue = inputOperandSumOne.value;
 	const inputOperandSumTwoValue = inputOperandSumTwo.value;
-	const inputSum = parseFloat(inputOperandSumOneValue, 10) + parseFloat(inputOperandSumTwoValue, 10);
+	const inputSum = sum(inputOperandSumTwoValue, inputOperandSumOneValue);
 
 	const inputOperandSubtractionOneValue = inputOperandSubtractionOne.value;
 	const inputOperandSubtractionTwoValue = inputOperandSubtractionTwo.value;
-	const inputSubtraction = parseFloat(inputOperandSubtractionOneValue, 10) - parseFloat(inputOperandSubtractionTwoValue, 10);
+	const inputSubtraction = subtraction(inputOperandSubtractionOneValue, inputOperandSubtractionTwoValue)
 
 	const inputOperandMultiplicationOneValue = inputOperandMultiplicationOne.value;
 	const inputOperandMultiplicationTwoValue = inputOperandMultiplicationTwo.value;
-	const inputMultiplication = parseFloat(inputOperandMultiplicationOneValue, 10) * parseFloat(inputOperandMultiplicationTwoValue, 10);
+	const inputMultiplication = multiplication(inputOperandMultiplicationOneValue, inputOperandMultiplicationTwoValue)
 
 	const inputOperandDivisionOneValue = inputOperandDivisionOne.value;
 	const inputOperandDivisionTwoValue = inputOperandDivisionTwo.value;
-	const inputDivision = parseFloat(inputOperandDivisionOneValue, 10) / parseFloat(inputOperandDivisionTwoValue, 10);
+	const inputDivision = division(inputOperandDivisionOneValue, inputOperandDivisionTwoValue)
 
 	operators(inputSum, 'sum');
 	operators(inputSubtraction, 'subtraction');
@@ -36,24 +57,26 @@ button.addEventListener('click', function () {
 	operators(inputDivision, 'division');
 });
 
-function resets(divResult, divId) {
-	document.getElementById(divId).value = divResult;
-	document.getElementById(divId).innerHTML = divResult;
+function resetsInput(inputId) {
+	document.getElementById(inputId).value = '';
 }
 
+function resetsDiv(divId) {
+	document.getElementById(divId).innerHTML = '';
+}
 reset.addEventListener('click', function () {
-	resets('', 'input1');
-	resets('', 'input2');
-	resets('', 'input3');
-	resets('', 'input4');
-	resets('', 'input5');
-	resets('', 'input6');
-	resets('', 'input7');
-	resets('', 'input8');
-	resets('', 'sum');
-	resets('', 'multiplication');
-	resets('', 'subtraction');
-	resets('', 'division');
+	resetsInput('input1');
+	resetsInput('input2');
+	resetsInput('input3');
+	resetsInput('input4');
+	resetsInput('input5');
+	resetsInput('input6');
+	resetsInput('input7');
+	resetsInput('input8');
+	resetsDiv('sum');
+	resetsDiv('multiplication');
+	resetsDiv('subtraction');
+	resetsDiv('division');
 });
 
 
