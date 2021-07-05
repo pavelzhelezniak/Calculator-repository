@@ -87,3 +87,8 @@ main {
 	margin-left: 40px;
 	color: #332e2e;
 }
+
+.heading-translation {
+	color: #a85037;
+	text-decoration: underline;
+}

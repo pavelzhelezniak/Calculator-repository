@@ -8,6 +8,8 @@ const inputOperandDivisionOne = document.getElementById('input7');
 const inputOperandDivisionTwo = document.getElementById('input8');
 const button = document.getElementById('button');
 const reset = document.getElementById('reset');
+const inputOperatos = document.getElementById('input-operators');
+const buttonTranslation = document.getElementById('button-translation');
 
 function operators1(inputSumResult) {
 	document.getElementById('sum').innerHTML = inputSumResult;
@@ -81,3 +83,37 @@ reset.addEventListener('click', function () {
 	resetsDiv('subtraction');
 	resetsDiv('division');
 });
+
+
+
+function translationOperatorsInDiv(translationOperators) {
+	document.getElementById('translation').innerHTML = translationOperators;
+}
+
+buttonTranslation.addEventListener('click', function () {
+	let inputOperatosValue = inputOperatos.value;
+	switch (inputOperatosValue) {
+		case '+':
+			translationOperatorsInDiv('Сложение')
+			break;
+		case '-':
+			translationOperatorsInDiv('Вычитание');
+			break;
+		case '*':
+			translationOperatorsInDiv('Умножение');
+			break;
+		case '/':
+			translationOperatorsInDiv('Деление ');
+			break;
+		case '%':
+			translationOperatorsInDiv('Взятие остатка от деления');
+			break;
+		case '÷':
+			translationOperatorsInDiv('Деление ');
+			break;
+		default:
+			translationOperatorsInDiv('Не коректный ввод элемента!');
+			break;
+	}
+});
+
