@@ -22,7 +22,6 @@ main {
 	display: flex;
 	justify-content: center;
 	height: 300px;
-	background-color: gainsboro;
 	border-radius: 20px;
 }
 
@@ -77,3 +76,14 @@ main {
 	cursor: pointer;
 }
 
+.switch-case {
+	display: flex;
+   justify-content: left;
+   width: 500px;
+	margin-top: 15px;
+}
+
+.name-operators {
+	margin-left: 40px;
+	color: #332e2e;
+}
