@@ -7,53 +7,63 @@ const inputOperandMultiplicationTwo = document.getElementById('input6');
 const inputOperandDivisionOne = document.getElementById('input7');
 const inputOperandDivisionTwo = document.getElementById('input8');
 const button = document.getElementById('button');
+const reset = document.getElementById('reset');
 
+function operators1(inputSumResult) {
+	document.getElementById('sum').innerHTML = inputSumResult;
 
-function operators(inputResult, elementId) {
-	document.getElementById(elementId).innerHTML = inputResult;
 }
 
-function sum(inputOperandSumOneValue, inputOperandSumTwoValue) {
-	return parseFloat(inputOperandSumOneValue, 10) + parseFloat(inputOperandSumTwoValue, 10);
+function operators2(inputSubtractionResult) {
+	document.getElementById('subtraction').innerHTML = inputSubtractionResult;
 }
 
-function subtraction(inputOperandSubtractionOneValue, inputOperandSubtractionTwoValue) {
-	return parseFloat(inputOperandSubtractionOneValue, 10) - parseFloat(inputOperandSubtractionTwoValue, 10);
+function operators3(inputMultiplicationResult) {
+	document.getElementById('multiplication').innerHTML = inputMultiplicationResult;
 }
 
-function multiplication(inputOperandMultiplicationOneValue, inputOperandMultiplicationTwoValue) {
-	return parseFloat(inputOperandMultiplicationOneValue, 10) * parseFloat(inputOperandMultiplicationTwoValue, 10);
+function operators4(inputDivisionResult) {
+	document.getElementById('division').innerHTML = inputDivisionResult;
 }
-
-function division(inputOperandDivisionOneValue, inputOperandDivisionTwoValue) {
-	return parseFloat(inputOperandDivisionOneValue, 10) / parseFloat(inputOperandDivisionTwoValue, 10);
-}
-
-function calculate(inputOperandOne, inputOperandTwo, operation) {
-	return operation(inputOperandOne.value, inputOperandTwo.value);
-}
-
 
 button.addEventListener('click', function () {
 
-	const inputSum = calculate(inputOperandSumOne, inputOperandSumTwo, sum);
+	const inputOperandSumOneValue = inputOperandSumOne.value;
+	const inputOperandSumTwoValue = inputOperandSumTwo.value;
 
-	const inputSubtraction = calculate(inputOperandSubtractionOne, inputOperandSubtractionTwo, subtraction);
+	if (inputOperandSumOneValue && inputOperandSumTwoValue) {
+		const inputSum = parseFloat(inputOperandSumOneValue, 10) + parseFloat(inputOperandSumTwoValue, 10);
+		operators1(inputSum);
+	}
 
-	const inputMultiplication = calculate(inputOperandMultiplicationOne, inputOperandMultiplicationTwo, multiplication)
+	const inputOperandSubtractionOneValue = inputOperandSubtractionOne.value;
+	const inputOperandSubtractionTwoValue = inputOperandSubtractionTwo.value;
 
-	const inputDivision = calculate(inputOperandDivisionOne, inputOperandDivisionTwo, division)
+	if (inputOperandSubtractionOneValue && inputOperandSubtractionTwoValue) {
+		const inputSubtraction = parseFloat(inputOperandSubtractionOneValue, 10) - parseFloat(inputOperandSubtractionTwoValue, 10);
+		operators2(inputSubtraction);
+	}
 
-	operators(inputSum, 'sum');
-	operators(inputSubtraction, 'subtraction');
-	operators(inputMultiplication, 'multiplication');
-	operators(inputDivision, 'division');
+	const inputOperandMultiplicationOneValue = inputOperandMultiplicationOne.value;
+	const inputOperandMultiplicationTwoValue = inputOperandMultiplicationTwo.value;
+
+	if (inputOperandMultiplicationOneValue && inputOperandMultiplicationTwoValue) {
+		const inputMultiplication = parseFloat(inputOperandMultiplicationOneValue, 10) * parseFloat(inputOperandMultiplicationTwoValue, 10);
+		operators3(inputMultiplication);
+	}
+
+	const inputOperandDivisionOneValue = inputOperandDivisionOne.value;
+	const inputOperandDivisionTwoValue = inputOperandDivisionTwo.value;
+
+	if (inputOperandDivisionOneValue && inputOperandDivisionTwoValue) {
+		const inputDivision = parseFloat(inputOperandDivisionOneValue, 10) / parseFloat(inputOperandDivisionTwoValue, 10);
+		operators4(inputDivision);
+	}
 });
 
 function resetsInput(inputId) {
 	document.getElementById(inputId).value = '';
 }
-
 function resetsDiv(divId) {
 	document.getElementById(divId).innerHTML = '';
 }
@@ -71,8 +81,3 @@ reset.addEventListener('click', function () {
 	resetsDiv('subtraction');
 	resetsDiv('division');
 });
-
-
-
-
-
