@@ -84,11 +84,19 @@ main {
 }
 
 .name-operators {
-	margin-left: 40px;
+	display: flex;
+	align-items: center;
+	margin-left: 30px;
 	color: #332e2e;
 }
 
 .heading-translation {
 	color: #a85037;
 	text-decoration: underline;
+}
+
+.images-stop-style {
+	width: 20px;
+	height: 18px;
+	margin-right: 6px;
 }

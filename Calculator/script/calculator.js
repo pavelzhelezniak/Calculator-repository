@@ -103,17 +103,14 @@ buttonTranslation.addEventListener('click', function () {
 			translationOperatorsInDiv('Умножение');
 			break;
 		case '/':
+		case '÷':
 			translationOperatorsInDiv('Деление ');
 			break;
 		case '%':
 			translationOperatorsInDiv('Взятие остатка от деления');
 			break;
-		case '÷':
-			translationOperatorsInDiv('Деление ');
-			break;
 		default:
-			translationOperatorsInDiv('Не коректный ввод элемента!');
-			break;
+			translationOperatorsInDiv('<img src="images/stop.jpg" class="images-stop-style">    Не коректный ввод элемента!');
 	}
 });
 
